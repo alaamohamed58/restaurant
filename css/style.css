@@ -6,6 +6,7 @@
     --paddingTop : 60px;
     --paddingBot : 60px;
     --transitionDuration : 0.4s;
+    --secondColor : rgba(255, 255, 255, 0.5)
 }
 *{
     padding: 0;
@@ -23,6 +24,36 @@ body{
 }
 h3{
     font-family: 'Playfair Display', serif !important;
+}
+.main-heading{
+    padding-bottom: 40px;
+}
+.main-heading h2{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 0 0 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+.main-heading h2::after{
+    content: "";
+    width: 120px;
+    height: 1px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 4px 10px;
+}
+.main-heading p{
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    color: #cda45e;
 }
 .container{
     padding: 0 30px;
@@ -508,6 +539,232 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
         align-items: center;
     }
     .details .container .img{
+        order: -1;
+    }
+}
+.unique{
+    background-color: #0C0B09;
+    padding-top: var(--paddingTop);
+    padding-bottom: var(--paddingBot);
+}
+.unique .container .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    transform: scale(0);
+    transition: 1s;
+}
+.unique .container.active .content{
+    transform: scale(1);
+}
+.unique .container .content div{
+    color: #fff;
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgb(0 0 0 / 10%);
+    transition: all ease-in-out 0.3s;
+    background: #1a1814;
+    transition: all 0.4s;
+}
+.unique .container .main-heading{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1s;
+}
+.unique .container.active .main-heading{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.unique .container .content div:hover{
+    background-color: var(--mainColor);
+    padding: 30px 30px 70px 30px;
+}
+.unique .container .content div:hover h4,
+.unique .container .content div:hover p,
+.unique .container .content div:hover span{
+    color: #fff;
+}
+.unique .container .content div span{
+    color: var(--mainColor);
+    font-size: 20px;
+    font-weight: 800;
+}
+.unique .container .content div h4{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    margin: 20px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+.unique .container .content div p{
+    color: #aaaaaa;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+/*menu*/
+.menu{
+    padding-top: var(--paddingTop);
+    padding-bottom: var(--paddingBot);
+    background-color: #1A1814;
+    overflow: hidden;
+}
+.menu .container{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1s;
+}
+.menu .container.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.menu ul{
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 1s;
+}
+.menu .container ul.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    transform: translateY(0px);
+    opacity: 1;
+}
+.menu ul li{
+    color: #fff;
+    text-transform: capitalize;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.menu ul li.active{
+    color: var(--mainColor);
+}
+.menu ul li:hover{
+    color: var(--mainColor);
+}
+.menu .container .content{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)) ;
+    justify-content: center;
+    row-gap: 40px;
+}
+.menu .container .content .box{
+    color: #fff !important;
+    display: flex;
+    align-items: flex-start;
+    animation: filter linear 0.4s;
+}
+@keyframes filter{
+    from{
+        transform: translateX(0) scale(0);
+       
+    }
+    to{
+        transform: translateX(10px) scale(1);
+       
+    }
+}
+.menu .container .content .box .texts{
+    margin-left: 10px;
+}
+.menu .container .content .box img{
+    width: 60px;
+    border: 5px solid #484643;
+    border-radius: 50%;
+    order: -1;
+}
+.menu .container .content .box h4{
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .4s;
+}
+.menu .container .content .box h4:hover{
+    color: var(--mainColor);
+}
+.menu .container .content .box h4 span{
+    color: var(--mainColor);
+    font-weight: normal;
+}
+.menu .container .content .box h4 span::before{
+    content: "......................................";
+    font-weight: normal;
+    color: #fff;
+}
+.menu .container .content .box p{
+    font-style: italic;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: var(--secondColor);
+    margin-top: 5px;
+}
+/*specials*/
+.specials{
+    padding-top: var(--paddingTop);
+    padding-bottom: var(--paddingBot);
+    background-color: #0C0B09;
+}
+.specials .container .flex{
+    display: flex;
+    justify-content: space-between;
+}
+.specials .container .box{
+    flex-basis: 73%;
+}
+.specials .container .box h3{
+    color: var(--SecondaryColor);
+    margin-bottom: 20px;
+}
+.specials .container .box p{
+    color: #aaaaaa;
+}
+.specials .container ul{
+    width: fit-content;
+    border-right: 4px solid var(--mainColor);
+    flex-basis: 25%;
+}
+.specials .container ul li{
+    padding: 10px;
+   cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    transition: all .4s;
+}
+.specials .container ul li.active{
+    background-color: var(--mainColor);
+    color: #1a1814;
+}
+.specials .container .box .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: switch 1s linear;
+}
+@keyframes switch{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.specials .container .box .content:not(.box .content:first-child){
+    display: none;
+}
+.specials .container .box .content img{
+    width: 100%;
+}
+@media(max-width:768px){
+    .specials .container .flex,
+    .specials .container .flex .content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .specials .container .flex ul{
+        width: 100%;
+    }
+    .specials .container .flex .img{
         order: -1;
     }
 }
