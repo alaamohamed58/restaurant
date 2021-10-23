@@ -193,7 +193,7 @@ for(let i = 1; i <= slidesLength; i++){
 document.querySelector('.events .content').appendChild(bullets);
 let ulAg = document.querySelector('.events .content .bullets');
 let bulletsLi = document.querySelectorAll('.events .content .bullets li');
-console.log(bulletsLi)
+
 for(var i = 0; i<bulletsLi.length; i++){
     bulletsLi[i].onclick = function(){
         cuurentSlide = parseInt(this.getAttribute('data-index'));
@@ -226,3 +226,45 @@ let currentplus = setInterval(function(){
     }
     checker();
 }, 3000)
+//testimonial
+let comments = Array.from(document.querySelectorAll('.testimonial .container .content .box')),
+pass = false,
+currentComment = 1;
+let TestiUL = document.createElement('ul');
+TestiUL.classList = "bullets";
+for(let i = 1; i <= comments.length; i++ ){
+    let TestiLi = document.createElement('li');
+    TestiLi.setAttribute('data-index', i);
+    TestiUL.appendChild(TestiLi);
+    document.querySelector('.testimonial .container .content').appendChild(TestiUL);
+}
+let TestiLiS = document.querySelectorAll('.testimonial .container .content .bullets li');
+fix();
+function fix(){
+    removeActiveClass();
+    comments[currentComment - 1].classList.add('active');
+    TestiUL.children[currentComment - 1].classList.add('active');
+};
+for(let i = 0; i < TestiLiS.length; i++){
+    TestiLiS[i].onclick = function(){
+        currentComment = parseInt(this.getAttribute('data-index'));
+        fix();
+    }
+}
+function removeActiveClass(){
+    comments.forEach((a)=>{
+        a.classList.remove('active');
+    });
+    TestiLiS.forEach((li)=>{
+        li.classList.remove('active');
+    })
+};
+let commentPlus = setInterval(function(){
+    if(currentComment == comments.length){
+        currentComment = 1;
+    }else{
+        currentComment++;
+    }
+   
+    fix();
+}, 4000)

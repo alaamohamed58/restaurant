@@ -740,6 +740,7 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
     justify-content: center;
     align-items: center;
     animation: switch 1s linear;
+    min-height: 250px;
 }
 @keyframes switch{
     from{
@@ -843,4 +844,159 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
     .events .container .content .box{
         flex-direction: column;
     }
+}
+/*reservation*/
+.reservation{
+    padding-top: var(--paddingTop);
+    padding-bottom: var(--paddingBot);
+    background: #0C0B09;
+}
+.reservation form .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.reservation form .row{
+    width: 32.33%;
+    height: 43px;
+    margin-top: 1rem;
+    margin-right: 1%;
+    position: relative;
+}
+.reservation form .row span{
+    position: absolute;
+    background: var(--mainColor);
+    transition: all .4s;
+}
+.reservation form .row span:first-child{
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+}
+.reservation form .row span:nth-child(2){
+    left: 0;
+    bottom: 0;
+    width: 0px;
+    height: 3px;
+}
+.reservation form .row span:nth-child(3){
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 0px;
+}
+.reservation form .row span:nth-child(4){
+    right: 0;
+    top: 0;
+    width: 0px;
+    height: 3px;
+}
+.reservation form .row:hover span:first-child,
+.reservation form .row:hover span:nth-child(3){
+    height: 100%;
+}
+.reservation form .row:hover span:nth-child(2),
+.reservation form .row:hover span:nth-child(4){
+    width: 100%;
+}
+.reservation form .row input,
+.reservation form .row textarea{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #625b4b;
+    color: #fff;
+    padding: .375rem .75rem;
+}
+.reservation form .row.seven{
+    width: 100%;
+    height: 150px;
+}
+.reservation form .row input:focus,
+.reservation form .row textarea:focus{
+    outline: none;
+}
+.reservation form button{
+   display: block;
+   margin: 20px auto;
+}
+@media(max-width:768px){
+    .reservation form .row{
+        width: 100%;
+    }
+}
+/*testimonial*/
+.testimonial{
+    padding-top: var(--paddingTop);
+    padding-bottom: var(--paddingBot);
+    background: #1A1814;
+}
+.testimonial .container .content{
+    perspective: 400;
+    overflow: hidden;
+}
+.testimonial .container .content .box{
+    display: none;
+    animation: animations 0.4s linear;
+    overflow: hidden;
+}
+@keyframes animations{
+    from{
+        transform: scale(2) translateX(50%) ;
+        opacity: 0.8;
+    }
+    to{
+        transform: scale(1) translateX(0%) ;
+        opacity: 1;
+
+    }
+}
+.testimonial .container .content .box.active{
+    display: block;
+}
+.testimonial .container .content .box i{
+    color: var(--mainColor);
+    font-size: 16px;
+}
+.testimonial .container .content .box p{
+    font-style: italic;
+    padding: 20px 20px 60px 20px;
+    background: #26231D;
+    line-height: 1.6;
+}
+.testimonial .container .content .box img{
+    width: 90px;
+    border-radius: 50%;
+    margin: -40px 0 0 40px;
+    position: relative;
+    z-index: 2;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+}
+.testimonial .container .content .box h3{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 45px;
+    color: white;
+}
+.testimonial .container .content .box span{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 44px;
+}
+.testimonial .container .content ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.testimonial .container .content ul.bullets li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #67696A;
+    margin-left: 5px;
+}
+.testimonial .container .content ul.bullets li.active{
+    background: var(--mainColor);
 }
