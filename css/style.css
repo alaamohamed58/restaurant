@@ -768,3 +768,79 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
         order: -1;
     }
 }
+/*events*/
+.events{
+    padding-top: var(--paddingTop);
+    padding-bottom: var(--paddingBot);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/events-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.events .container .content{
+    transform-style: preserve-3d;
+}
+.events .container .content .box{
+    justify-content: space-between;
+    display: none;
+    animation: swap 1s linear;
+}
+.events .container .content .box.active{
+    display: flex;
+   
+}
+@keyframes swap{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.events .container .content .box img{
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px 5px 50px -1px var(--shadow);
+}
+.events .container .content .box >  div{
+    flex-basis: 49%;
+}
+.events .container .content .box h3{
+    color: var(--mainColor);
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.events .container .content .box span{
+    color: #fff;
+    border-bottom: 2px solid var(--mainColor);
+    font-weight: bold;
+    font-size: 26px;
+}
+.events .container .content .box ul, p{
+    color: #fff;
+}
+.events .container .content .box ul li{
+    margin-bottom: 10px;
+}
+.events .container .content .box p{
+    margin: 20px 0;
+}
+.events .container .content ul.bullets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.events .container .content ul.bullets li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #67696A;
+    margin-left: 5px;
+}
+.events .container .content ul.bullets li.active{
+    background: var(--mainColor);
+}
+@media(max-width:768px){
+    .events .container .content .box{
+        flex-direction: column;
+    }
+}
