@@ -62,15 +62,27 @@ window.addEventListener('load', ()=>{
         document.querySelector('.landing .content').style.display = "block";
 });
 window.addEventListener('scroll', ()=>{
-    if(document.querySelector('.details .container').getBoundingClientRect().top < window.innerHeight){
+    if(document.querySelector('.details .container').getBoundingClientRect().top < window.innerHeight - 180){
         document.querySelector('.details .container').classList.add('active');
     }
-    if(document.querySelector('.unique .container').getBoundingClientRect().top < window.innerHeight){
+    if(document.querySelector('.unique .container').getBoundingClientRect().top < window.innerHeight - 180){
         document.querySelector('.unique .container').classList.add('active')
     };
-    if(document.querySelector('.menu .container').getBoundingClientRect().top < window.innerHeight){
+    if(document.querySelector('.menu .container').getBoundingClientRect().top < window.innerHeight - 180){
         document.querySelector('.menu .container').classList.add('active');
         document.querySelector('.menu .container ul').classList.add('active');
+    };
+    if(document.querySelector('.specials .container').getBoundingClientRect().top < window.innerHeight - 180){
+        document.querySelector('.specials .container').classList.add('active');
+    };
+    if(document.querySelector('.reservation .container').getBoundingClientRect().top < window.innerHeight - 180){
+        document.querySelector('.reservation .container').classList.add('active');
+    };
+    if(document.querySelector('.chefs .container').getBoundingClientRect().top < window.innerHeight - 180){
+        document.querySelector('.chefs .container').classList.add('active');
+    };
+    if(document.querySelector('.gallery .container').getBoundingClientRect().top < window.innerHeight - 180){
+        document.querySelector('.gallery .container').classList.add('active');
     };
 });
 //MENU

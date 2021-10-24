@@ -706,6 +706,20 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
 .specials .container .flex{
     display: flex;
     justify-content: space-between;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: .5s;
+}
+
+.specials .container .main-heading{
+    transform: translateY(100px);
+    transition: all 1s;
+}
+.specials .container.active .flex,
+.specials .container.active .main-heading{
+    transform: translateY(0px);
+    opacity: 1;
 }
 .specials .container .box{
     flex-basis: 73%;
@@ -846,10 +860,30 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
 .reservation{
     background: #0C0B09;
 }
+.reservation .container .main-heading{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+.reservation .container.active .main-heading{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.reservation form {
+    transition: 1s;
+    transition-delay: 0.5s;
+    transform: translateY(100px);
+    opacity: 0;
+}
 .reservation form .content{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+}
+.reservation .container.active form{
+    transform: translateY(0px);
+    opacity: 1;
 }
 .reservation form .row{
     width: 32.33%;
@@ -1003,6 +1037,23 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+.gallery .container .main-heading{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+.gallery .container.active .main-heading{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.gallery .container.active .content{
+    transform: translateY(0px);
+    opacity: 1;
 }
 .gallery .container .content .box{
     flex-basis: 25%;
@@ -1074,11 +1125,28 @@ header .container nav ul li a:not(nav ul li:nth-child(10) a):hover{
 .chefs{
     background-color: #0C0B09;
 }
-.chefs .content{
+.chefs .container .main-heading{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+.chefs .container.active .main-heading{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.chefs .container .content{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+.chefs .container.active .content{
+    transform: translateY(0px);
+    opacity: 1;
 }
 .chefs .content .box{
     flex-basis: 32%;
