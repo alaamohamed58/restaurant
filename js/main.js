@@ -267,4 +267,91 @@ let commentPlus = setInterval(function(){
     }
    
     fix();
-}, 4000)
+}, 4000);
+//gallery
+let modalImg = document.querySelector('.gallery .modal img'),
+galleryImg = Array.from(document.querySelectorAll(".gallery .content .box img")),
+nextBtn = document.querySelector('.gallery .container .modal i.right'),
+preBtn = document.querySelector('.gallery .container .modal i.left'),
+current = 1;
+
+galleryImg.forEach((img)=>{
+    img.addEventListener('click', function(){
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+        document.querySelector('.gallery .modal').style.display = "flex"
+    })
+})
+nextBtn.onclick = function(){
+    current ++;
+    
+    checkers();
+}
+
+
+
+checkers()
+function checkers(){
+    removes();
+    galleryImg[cuurentSlide - 1].classList.add('active'); 
+    
+}
+function removes(){
+    galleryImg.forEach((a)=>{
+        a.classList.remove('active');
+        
+    });
+}
+
+
+
+
+document.querySelector('.gallery .container .modal span').onclick = ()=>{
+    document.querySelector('.gallery .modal').style.display = "none"
+};
+//chefs
+let chefs = [`images/chefs/chefs-1.jpg`,
+`images/chefs/chefs-2.jpg`,
+`images/chefs/chefs-3.jpg`];
+for(let i = 0; i < chefs.length; i++){
+    let chefBox = document.createElement('div');
+    chefBox.classList = "box";
+    let chefImg = document.createElement('img');
+    let details = document.createElement('div');
+    details.style.cssText = "position : absolute ; top : 0;  width : 100%; height : 100%"
+    details.classList = "information";
+    chefImg.style.width = "100%";
+    chefImg.src = chefs[i];
+    chefImg.alt = "chefs";
+    chefBox.appendChild(chefImg);
+    chefBox.appendChild(details);
+    document.querySelector('.chefs .content').appendChild(chefBox);
+}
+let infor =   document.querySelectorAll('.chefs .content .box .information');
+infor[0].innerHTML = ` <div class = "text"> <h4> Walter White </h4>
+<span> Master Chef </span> <div class = "icons"> 
+<i class="fab fa-twitter"></i>
+<i class="fab fa-facebook-f"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin-in"></i>
+ </div> 
+ </div>
+` 
+infor[1].innerHTML = ` <div class = "text"> <h4> Sarah Jhonson</h4>
+<span> Patissier </span> <div class = "icons"> 
+<i class="fab fa-twitter"></i>
+<i class="fab fa-facebook-f"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin-in"></i>
+ </div> 
+ </div>
+` 
+infor[2].innerHTML = ` <div class = "text"> <h4> William Anderson </h4>
+<span> Cook </span> <div class = "icons"> 
+<i class="fab fa-twitter"></i>
+<i class="fab fa-facebook-f"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-linkedin-in"></i>
+ </div> 
+ </div>
+` 
